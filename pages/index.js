@@ -19,7 +19,12 @@ export default function Time() {
 
       <footer className={styles.footer}>
         <a href="https://takija.io" target="_blank" rel="noopener noreferrer">
-          Created by <img src="/me.png" alt="image" className={styles.logo} />
+          Created by{" "}
+          <img
+            src="https://takija.io/images/edvin.jpg"
+            alt="image"
+            className={styles.logo}
+          />
         </a>
       </footer>
     </div>
