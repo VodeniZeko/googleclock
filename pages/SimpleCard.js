@@ -22,10 +22,11 @@ export default function SimpleCard({
   keep,
 }) {
   const classes = customStyle();
-
   const currHour = new Date().getHours();
   const currMin = new Date().getMinutes();
-
+  if (!handleChange) {
+    return null;
+  }
   return (
     <Card>
       <CardContent className={classes.root}>

@@ -41,7 +41,7 @@ export default function TimeComponent() {
     });
   };
 
-  console.log(time);
+  //   console.log(time);
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
