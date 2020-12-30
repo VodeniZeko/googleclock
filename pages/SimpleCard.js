@@ -42,7 +42,8 @@ export default function SimpleCard({
               InputProps={{ inputProps: { min: 0, max: 24 } }}
               variant="outlined"
               onChange={handleChange("hours")}
-              value={hours < 10 ? `0${hours}` : hours}
+              //   value={hours < 10 ? `0${hours}` : hours}
+              value={hours}
             />
 
             <Typography
@@ -64,7 +65,8 @@ export default function SimpleCard({
               name="minutes"
               variant="outlined"
               onChange={handleChange("minutes")}
-              value={minutes < 10 ? `0${minutes}` : minutes}
+              //   value={minutes < 10 ? `0${minutes}` : minutes}
+              value={minutes}
             />
             <Typography
               className={classes.secondTitle}

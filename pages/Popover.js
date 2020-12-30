@@ -58,6 +58,8 @@ export default function TimeComponent() {
           {`${time.hours < 10 ? `0${time.hours}` : time.hours}:${
             time.minutes < 10 ? `0${time.minutes}` : time.minutes
           }${ampm}`}
+          {/* {time.hours}:{time.minutes}
+          {ampm} */}
         </Typography>
 
         <AccessTimeIcon fontSize="large" />
