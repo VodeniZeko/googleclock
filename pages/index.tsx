@@ -111,7 +111,7 @@ const {  hours,
             name="hours"
             InputProps={{ inputProps: { min: 0, max: 23 },className: classes.input }}
             variant="outlined"
-            multiline={true} 
+            // multiline={true} 
             onChange={handleChange("hours")} 
               value={hours}
          
@@ -133,7 +133,7 @@ const {  hours,
             InputProps={{ 
               inputProps: { min: 0, max: 59 },
               className: classes.input }}
-            multiline={true} 
+            // multiline={true} 
             type="number"
             name="minutes"
             variant="outlined"
