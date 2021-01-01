@@ -132,7 +132,7 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
   
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleChange = (prop:String) => (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (prop:string) => (event: React.ChangeEvent<HTMLInputElement>) => {
     let newValue: number = Number(event.target.value);
     if (prop === "hours" && newValue > 24) {
       return newValue ;
