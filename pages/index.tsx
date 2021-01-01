@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import customStyle from "../styles/CustomStyles";
+// import customStyle from "../styles/CustomStyles";
 import {
   ButtonGroup,
   Card,
@@ -14,7 +14,71 @@ Typography,
 Button,
 } from "@material-ui/core";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
+import { makeStyles } from "@material-ui/core/styles";
 /////////////////////////////////////////////////////////////////////
+
+const customStyle = makeStyles ({
+  root: {
+    width: "330px",
+  },
+  title: {
+    fontSize: 14,
+    fontWeight:"bolder",
+    padding:"1em"
+  },
+  box: {
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "space-between",
+    textAlign: "center",
+    textAlignLast:"center",
+    
+  },
+  input:{
+    background:"#e2e2e2",
+    color:"#026A95",
+  },
+  digits: {
+    width: "26%",
+    margin: ".8em",
+  },
+  secondTitle: {
+    fontSize: 13,
+    marginTop: ".5em",
+    marginRight: "2.5em",
+  },
+  smallDigits: {
+    alignSelf: "center",
+    height: "90px",
+  },
+  on: {
+    backgroundColor: "#CDE1EA",
+    color:"#026A95",
+    height:"30px"
+  },
+  off:{
+    height:"28px"
+  },
+  span: {
+    color:"#026A95",
+    fontWeight:"bold",
+    
+    },
+  actions: {
+    display: "flex",
+    justifyContent: "flex-end",
+  },
+  textField: {
+    width: "25ch",
+    height: "9ch",
+    borderColor: '#026A95',
+  },
+  time: {
+    margin: ".5em",
+  },
+});
+
+
 
 interface ParentCompProps {
   childComp?: React.ReactNode;
@@ -91,7 +155,6 @@ const {  hours,
         </Box>
         <Box className={classes.digits}>
           <ButtonGroup
-            className={classes.group}
             orientation="vertical"
             aria-label="vertical outlined primary button group"
           >
@@ -233,29 +296,3 @@ export default function Main() {
   );
 }
 
-
-// export default function Time() {
-//   return (
-//     <div className={styles.container}>
-//       <Head>
-//         <title>Time Assignment</title>
-//         <link rel="icon" href="/clock.png" />
-//       </Head>
-
-//       <main className={styles.main}>
-//         <Popover />
-//       </main>
-
-//       <footer className={styles.footer}>
-//         <a href="https://takija.io" target="_blank" rel="noopener noreferrer">
-//           Created by{" "}
-//           <img
-//             src="https://takija.io/images/edvin.jpg"
-//             alt="image"
-//             className={styles.logo}
-//           />
-//         </a>
-//       </footer>
-//     </div>
-//   );
-// }
