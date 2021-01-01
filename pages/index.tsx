@@ -111,11 +111,10 @@ const {  hours,
             name="hours"
             InputProps={{ inputProps: { min: 0, max: 23 },className: classes.input }}
             variant="outlined"
-            // multiline={true} 
-            onChange={handleChange("hours")}
-            
+            multiline={true} 
+            onChange={handleChange("hours")} 
               value={hours}
-            // value={hours}
+         
           />
   
           <Typography
@@ -134,12 +133,12 @@ const {  hours,
             InputProps={{ 
               inputProps: { min: 0, max: 59 },
               className: classes.input }}
-            // multiline={true} 
+            multiline={true} 
             type="number"
             name="minutes"
             variant="outlined"
             onChange={handleChange("minutes")}
-              value={minutes}
+              value={minutes < "10" ? `0${minutes}` : minutes}
             // value={minutes}
           />
           <Typography
