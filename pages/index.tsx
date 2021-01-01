@@ -77,16 +77,13 @@ const customStyle = makeStyles ({
   },
 });
 
-
-
 interface ParentCompProps {
   childComp?: React.ReactNode;
-
 }
 
 interface ChildCompProps {
-  hours: number;
-  minutes:number;
+  hours: string;
+  minutes:string;
   ampm:string;
   handleChange: (action: string) => any;
   drop: () => any;
@@ -117,7 +114,7 @@ const {  hours,
             // multiline={true} 
             onChange={handleChange("hours")}
             
-              value={hours < 10 ? `0${hours}` : hours}
+              value={hours}
             // value={hours}
           />
   
@@ -142,7 +139,7 @@ const {  hours,
             name="minutes"
             variant="outlined"
             onChange={handleChange("minutes")}
-              value={minutes < 10 ? `0${minutes}` : minutes}
+              value={minutes < "10" ? `0${minutes}` : minutes}
             // value={minutes}
           />
           <Typography
@@ -182,11 +179,11 @@ const {  hours,
 const ParentComp: React.FC<ParentCompProps> = (props) => {
   const classes = customStyle();
   const [time, setTime] = useState({
-    hours: "" || new Date().getHours(),
-    minutes: "" || new Date().getMinutes(),
+    hours: "" || ('0'+new Date().getHours()).slice(-2),
+    minutes: "" || ('0'+new Date().getMinutes()).slice(-2),
   });
   
-  const ampm: string = time.hours >= 12 ? "PM" : "AM";
+  const ampm: string = time.hours >= "12" ? "PM" : "AM";
 
   
   const [anchorEl, setAnchorEl] = React.useState(false);
@@ -215,8 +212,8 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
     setAnchorEl(false);
     setTime({
       ...time,
-      hours: "" || new Date().getHours(),
-      minutes: "" || new Date().getMinutes(),
+      hours: "" || ('0'+new Date().getHours()).slice(-2),
+      minutes: "" || ('0'+new Date().getMinutes()).slice(-2),
     });
   };
 
@@ -234,8 +231,8 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
         disableRipple={true}
       >
         <Typography variant="h5" className={classes.time}>
-          {time.hours < 10 ? `0${time.hours}` : time.hours }:{
-            time.minutes < 10 ? `0${time.minutes}` : time.minutes
+          {time.hours }:{
+            time.minutes < "10" ? `0${time.minutes}` : time.minutes
           }{ampm}
           {/* {time.hours}:{time.minutes}
           {ampm} */}
