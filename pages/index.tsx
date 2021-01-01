@@ -18,6 +18,7 @@ import AccessTimeIcon from "@material-ui/icons/AccessTime";
 
 interface ParentCompProps {
   childComp?: React.ReactNode;
+
 }
 
 interface ChildCompProps {
@@ -126,7 +127,7 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
   const ampm: string = time.hours >= 12 ? "PM" : "AM";
 
   
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(false);
 
   const handleChange = (prop:string) => (event: React.ChangeEvent<HTMLInputElement>) => {
     let newValue: number = Number(event.target.value);
@@ -142,15 +143,15 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
   
 
   const handleClick = () => {
-    // console.log(e)
-    // const newValue: any = e.currentTarget.value;
-    setAnchorEl(!anchorEl);
+    // const newValue: any = e.target.value;
+    console.log("e.target.value")
+    setAnchorEl(true);
   };
   const handleCloseOn = () => {
-    setAnchorEl(null);
+    setAnchorEl(false);
   };
   const handleCloseOff = () => {
-    setAnchorEl(null);
+    setAnchorEl(false);
     setTime({
       ...time,
       hours: "" || new Date().getHours(),
@@ -184,7 +185,6 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
       <Popover
         id={id}
         open={open}
-        anchorEl={anchorEl}
         onClose={handleCloseOn}
         anchorOrigin={{
           vertical: "center",
