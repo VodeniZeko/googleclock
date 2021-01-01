@@ -169,7 +169,7 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
         // className={classes.textField}
         // aria-describedby={id}
         // variant="outlined"
-        onClick={handleClick}
+        // onClick={handleClick}
         // disableRipple={true}
       >
         <Typography variant="h5" className={classes.time}>
