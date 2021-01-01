@@ -2,7 +2,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Theme } from "@material-ui/core";
 
 const customStyle = makeStyles<Theme>(theme => ({
-
   textField: {
     width: "25ch",
     height: "9ch",

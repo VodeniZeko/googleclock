@@ -143,7 +143,6 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
   
 
   const handleClick = () => {
-    // const newValue: any = e.target.value;
     console.log("e.target.value")
     setAnchorEl(true);
   };
