@@ -6,6 +6,7 @@ const customStyle = makeStyles<Theme>(theme => ({
   textField: {
     width: "25ch",
     height: "9ch",
+    borderColor: '#026A95',
   },
   time: {
     margin: ".5em",

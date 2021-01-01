@@ -118,10 +118,6 @@ const {  hours,
 
 const ParentComp: React.FC<ParentCompProps> = (props) => {
   const classes = customStyle();
-  const { childComp } = props;
-  console.log(props)
-  // return <div>{childComp}</div>;
-
   const [time, setTime] = useState({
     hours: "" || new Date().getHours(),
     minutes: "" || new Date().getMinutes(),
@@ -143,9 +139,12 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
     }
   };
 
-  const handleClick = (e: React.FormEvent<HTMLInputElement>) => {
-    const newValue: any = e.currentTarget.value;
-    setAnchorEl(newValue);
+  
+
+  const handleClick = () => {
+    // console.log(e)
+    // const newValue: any = e.currentTarget.value;
+    setAnchorEl(!anchorEl);
   };
   const handleCloseOn = () => {
     setAnchorEl(null);
@@ -164,13 +163,13 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
   const id = open ? "simple-popover" : undefined;
 
   return (
-    <div>
+    <>
       <Button
-        // className={classes.textField}
-        // aria-describedby={id}
-        // variant="outlined"
-        // onClick={handleClick}
-        // disableRipple={true}
+        className={classes.textField}
+        aria-describedby={id}
+        variant="outlined"
+        onClick={() => handleClick()}
+        disableRipple={true}
       >
         <Typography variant="h5" className={classes.time}>
           {time.hours < 10 ? `0${time.hours}` : time.hours }:{
@@ -188,7 +187,7 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
         anchorEl={anchorEl}
         onClose={handleCloseOn}
         anchorOrigin={{
-          vertical: "bottom",
+          vertical: "center",
           horizontal: "center",
         }}
         transformOrigin={{
@@ -205,7 +204,7 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
         keep={handleCloseOn}
         />
       </Popover>
-    </div>
+    </>
   );
 };
 
