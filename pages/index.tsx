@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-// import customStyle from "../styles/CustomStyles";
 import {
   ButtonGroup,
   Card,
