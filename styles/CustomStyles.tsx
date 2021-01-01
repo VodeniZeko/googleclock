@@ -1,6 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
+import { Theme } from "@material-ui/core";
 
-const customStyle = makeStyles((theme) => ({
+const customStyle = makeStyles<Theme>(theme => ({
+
   textField: {
     width: "25ch",
     height: "9ch",
@@ -17,36 +19,58 @@ const customStyle = makeStyles((theme) => ({
     fontSize: 32,
   },
   title: {
-    fontSize: 22,
+    fontSize: 14,
+    fontWeight:"bolder",
+    padding:"1em"
   },
   secondTitle: {
-    fontSize: 14,
+    fontSize: 13,
     marginTop: ".5em",
-    marginRight: "2em",
+    marginRight: "2.5em",
   },
   pos: {
     marginBottom: 12,
   },
   box: {
     display: "flex",
-    alignItems: "baseline",
     justifyContent: "center",
     alignContent: "space-between",
     textAlign: "center",
+    textAlignLast:"center",
+    
+  },
+  input:{
+    background:"#e2e2e2",
+    color:"#026A95",
   },
   digits: {
-    width: "22%",
-    margin: ".5em",
+    width: "26%",
+    margin: ".8em",
+    
+    
   },
+span: {
+color:"#026A95",
+fontWeight:"bold",
+
+},
   smallDigits: {
     alignSelf: "center",
     height: "90px",
+    
   },
   on: {
-    backgroundColor: "#40e0d0",
+    backgroundColor: "#CDE1EA",
+    color:"#026A95",
+    height:"30px"
   },
+  off:{
+    height:"28px"
+  },
+ 
   actions: {
-    flexDirection: "row-reverse",
+    display: "flex",
+    justifyContent: "flex-end",
   },
 }));
 
