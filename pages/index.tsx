@@ -139,7 +139,7 @@ const {  hours,
             name="minutes"
             variant="outlined"
             onChange={handleChange("minutes")}
-              value={minutes < "10" ? `0${minutes}` : minutes}
+              value={minutes}
             // value={minutes}
           />
           <Typography
