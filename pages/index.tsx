@@ -143,9 +143,9 @@ const ParentComp: React.FC<ParentCompProps> = (props) => {
     }
   };
 
-  const handleClick = (e: React.ChangeEvent<HTMLInputElement>) => {
-
-    setAnchorEl(e.currentTarget);
+  const handleClick = (e: React.FormEvent<HTMLInputElement>) => {
+    const newValue: any = e.currentTarget.value;
+    setAnchorEl(newValue);
   };
   const handleCloseOn = () => {
     setAnchorEl(null);
